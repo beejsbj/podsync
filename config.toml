@@ -1,0 +1,158 @@
+
+[server]
+port = 8080
+# Optional. If you want to hide Podsync behind reverse proxy like nginx, you can use hostname field. Server will be accessible from http://localhost:8080, but episode links will point to https://my.test.host:4443/ID1/XYZ
+# hostname = "https://my.test.host:7637"
+
+# Configure where to store the episode data
+[storage]
+  [storage.local]
+  data_dir = "/app/data" # Don't change if you run podsync via docker
+
+
+# API keys to be used to access Youtube and Vimeo.
+# https://elfsight.com/blog/2016/12/how-to-get-youtube-api-key-tutorial/
+# These can be either specified as string parameter or array of string (so those will be rotated).
+[tokens]
+youtube = "AIzaSyCUNYRkDY0mRAtTYEqJ0S1tVsTkK_0Tt74" 
+
+####################################################################################
+# The list of data sources to be hosted by Podsync. These are channels, users, playlists, etc.
+[feeds]
+  # Each channel must have a unique identifier (in this example "ID1").
+  [feeds.Podcasts]
+  # URL address of a channel, group, user, or playlist.
+  url = "https://wgww.youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ"
+  # title = "Level1News"
+  description = "Playlist of low visual requirment, long videos"
+  # author = "Level1Tech"
+ # cover_art = "{IMAGE_URL}"
+  #cover_art_quality = "high"
+  #category = "TV"
+  #subcategories = ["Documentary", "Tech News"]
+  #explicit = true
+  lang = "en"
+  #author = "Mrs. Smith (mrs@smith.org)"
+  #ownerName = "Mrs. Smith"
+  #ownerEmail = "mrs@smith.org"
+  
+  # The number of episodes to query each update (keep in mind, that this might drain API token)
+  page_size = 100
+
+  # How often query for updates, examples: "60m", "4h", "2h45m"
+  update_period = "6h"
+  
+  quality = "low" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  # When format = "custom"
+
+  # YouTubeDL format parameter and result file extension
+  # custom_format = { youtube_dl_format = "bestaudio[ext=m4a]", extension = "m4a" }
+  # Embed YouTube timestamps as ID3 chapter metadata
+  youtube_dl_args = ["--embed-chapters"]
+
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+  # Optional maximal height of video, example: 720, 1080, 1440, 2160, ...
+  max_height = 480
+
+  # Optionally include this feed in OPML file (default value: false)
+  opml = true
+
+  # Optional cron expression format for more precise update schedule.
+  # If set then overwrite 'update_period'.
+  cron_schedule = "@every 6h"
+
+  # Whether to cleanup old episodes.
+  # Keep last 10 episodes (order desc by PubDate)
+  clean = { keep_last = 100 }
+
+  # When set to true, podcasts indexers such as iTunes or Google Podcasts will not index this podcast
+  private_feed = true
+  # optional: this will override the default link (usually the URL address) in the generated RSS feed with another link
+  ## link = "https://example.org"
+  
+#################################
+
+  # Optional feed customizations
+  [feeds.Youtubey]
+   # URL address of a channel, group, user, or playlist.
+  url = "https://www.youtube.com/playlist?list=PL4-Gg2zOJwW-oc2ecb-hZF1BJ7358hYFf"
+  # title = "Level1News"
+  description = "Playlist of short-medium videos"
+  # author = "Level1Tech"
+ # cover_art = "{IMAGE_URL}"
+  #cover_art_quality = "high"
+  #category = "TV"
+  #subcategories = ["Documentary", "Tech News"]
+  #explicit = true
+  lang = "en"
+  #author = "Mrs. Smith (mrs@smith.org)"
+  #ownerName = "Mrs. Smith"
+  #ownerEmail = "mrs@smith.org"
+  
+  # The number of episodes to query each update (keep in mind, that this might drain API token)
+  page_size = 100
+
+  # How often query for updates, examples: "60m", "4h", "2h45m"
+  update_period = "6h"
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  # When format = "custom"
+
+  # YouTubeDL format parameter and result file extension
+  # custom_format = { youtube_dl_format = "bestaudio[ext=m4a]", extension = "m4a" }
+  # Embed YouTube timestamps as ID3 chapter metadata
+  youtube_dl_args = ["--embed-chapters"]
+
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+  # Optional maximal height of video, example: 720, 1080, 1440, 2160, ...
+  max_height = 1080
+
+  # Optionally include this feed in OPML file (default value: false)
+  opml = true
+
+  # Optional cron expression format for more precise update schedule.
+  # If set then overwrite 'update_period'.
+  cron_schedule = "@every 6h"
+
+  # Whether to cleanup old episodes.
+  # Keep last 10 episodes (order desc by PubDate)
+  clean = { keep_last = 100 }
+
+  # When set to true, podcasts indexers such as iTunes or Google Podcasts will not index this podcast
+  private_feed = true
+  # optional: this will override the default link (usually the URL address) in the generated RSS feed with another link
+  ## link = "https://example.org"
+
+  # optional: this will override the default link (usually the URL address) in the generated RSS feed with another link
+ ## link = "https://example.org"
+
+# Podsync uses local database to store feeds and episodes metadata.
+
+####################################################################################
+
+
+##### This section is optional and usually not needed to configure unless some very specific corner cases.
+
+# Refer to https://dgraph.io/docs/badger/get-started/#memory-usage for documentation.
+[database]
+  badger = { truncate = true, file_io = true }
+
+# Youtube-dl specific configuration.
+[downloader]
+self_update = true # Optional, auto update youtube-dl every 24 hours
+
+# Download timeout in minutes.
+timeout = 20
+
+# Optional log config. If not specified logs to the stdout
+[log]
+filename = "podsync.log"
+max_size = 50 # MB
+max_age = 30 # days
+max_backups = 7
+compress = true
+debug = false
