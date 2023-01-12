@@ -84,7 +84,7 @@ youtube = "<YOUTUBE_API_KEY>"
   # YouTubeDL format parameter and result file extension
   # custom_format = { youtube_dl_format = "bestaudio[ext=m4a]", extension = "m4a" }
   
-##################################
+###############################
 
   [feeds.awakening]
   url = "https://youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ"
