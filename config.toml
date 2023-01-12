@@ -8,7 +8,7 @@ port = 8080
 
 [tokens]
 # youtube api token
-youtube = "AIzaSyCUNYRkDY0mRAtTYEqJ0S1tVsTkK_0Tt74" 
+youtube = "<YOUTUBE_API_KEY>" 
 
 
 ####################################################################################

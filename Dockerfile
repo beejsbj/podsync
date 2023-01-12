@@ -1,9 +1,12 @@
 FROM alpine:3.16
-
+ARG YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
 LABEL org.opencontainers.image.source=https://github.com/fqx/podsync-with-yt-dlp
 
 WORKDIR /app/
 COPY config.toml .
+
+RUN sed -i 's/<YOUTUBE_API_KEY>/$YOUTUBE_API_KEY/g' config.toml
+
 RUN wget -O /usr/bin/youtube-dl https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp && \
     chmod +x /usr/bin/youtube-dl && \
     wget -O /app/podsync.tar.gz https://github.com/mxpv/podsync/releases/download/v2.5.0/Podsync_2.5.0_Linux_x86_64.tar.gz && \
