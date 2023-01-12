@@ -16,6 +16,17 @@ jobs:
         node-version: [18.x]
 
     steps:
+      - uses: actions/checkout@v3
+      - uses: a7ul/tar-action@v1.1.0
+        with:
+          command: c
+          cwd: "./"
+          files: |
+            config.toml
+            Dockerfile
+            captain-definition
+          outPath: deploy.tar
+
       - name: Deploy App to CapRover
         uses: caprover/deploy-from-github@v1.0.1
         with:
