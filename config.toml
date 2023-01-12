@@ -1,29 +1,22 @@
 
 [server]
 port = 8080
-# Optional. If you want to hide Podsync behind reverse proxy like nginx, you can use hostname field. Server will be accessible from http://localhost:8080, but episode links will point to https://my.test.host:4443/ID1/XYZ
-# hostname = "https://my.test.host:7637"
 
-# Configure where to store the episode data
 [storage]
   [storage.local]
   data_dir = "/app/data" # Don't change if you run podsync via docker
 
-
-# API keys to be used to access Youtube and Vimeo.
-# https://elfsight.com/blog/2016/12/how-to-get-youtube-api-key-tutorial/
-# These can be either specified as string parameter or array of string (so those will be rotated).
 [tokens]
+# youtube api token
 youtube = "AIzaSyCUNYRkDY0mRAtTYEqJ0S1tVsTkK_0Tt74" 
 
+
 ####################################################################################
-# The list of data sources to be hosted by Podsync. These are channels, users, playlists, etc.
+
 [feeds]
-  # Each channel must have a unique identifier (in this example "ID1").
   [feeds.Podcasts]
-  # URL address of a channel, group, user, or playlist.
   url = "https://wgww.youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ"
-  # title = "Level1News"
+  # title = "Youtube Podcasts"
   description = "Playlist of low visual requirment, long videos"
   # author = "Level1Tech"
  # cover_art = "{IMAGE_URL}"

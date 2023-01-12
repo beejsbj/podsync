@@ -11,24 +11,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
-      - uses: actions/checkout@v3
-      - uses: a7ul/tar-action@v1.1.0
+      - name: Deploy Stage
+        uses: fjogeleit/http-request-action@v1
         with:
-          command: c
-          cwd: "./"
-          files: |
-            config.toml
-            Dockerfile
-            captain-definition
-          outPath: deploy.tar
-
-      - uses: caprover/deploy-from-github@v1.0.1
-        with:
-          server: '${{ secrets.CAPROVER_SERVER }}'
-          app: '${{ secrets.APP_NAME }}'
-          token: '${{ secrets.APP_TOKEN }}'
+          url: '${{ secrets.WEB_HOOK }}'
+          method: 'POST'
