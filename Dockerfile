@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source=https://github.com/fqx/podsync-with-yt-dlp
 WORKDIR /app/
 COPY config.toml .
 
-RUN sed -i 's/<YOUTUBE_API_KEY>/${YOUTUBE_API_KEY}/g' config.toml
+RUN sed -i "s/<YOUTUBE_API_KEY>/${YOUTUBE_API_KEY}/g" config.toml
 
 RUN wget -O /usr/bin/youtube-dl https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp && \
     chmod +x /usr/bin/youtube-dl && \
