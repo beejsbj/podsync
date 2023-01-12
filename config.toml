@@ -14,42 +14,6 @@ youtube = "<YOUTUBE_API_KEY>"
 ####################################################################################
 
 [feeds]
-  [feeds.Podcasts]
-  url = "https://youtube.com/playlist?list=PL4-Gg2zOJwW_Q28-l9eQB12mF81TGINrq"
-  private_feed = true
-  opml = true # (default value: false)
-
-  title = "Youtube Podcasts"
-  description = "Playlist of low visual requirment, long videos"
-  lang = "en"
-  # author = "Level1Tech"
-  # cover_art = "{IMAGE_URL}"
-  # cover_art_quality = "high"
-  # category = "TV"
-  # subcategories = ["Documentary", "Tech News"]
-  # explicit = true
-  
-  page_size = 100
-  clean = { keep_last = 100 }
-
-  update_period = "6h"
-  cron_schedule = "@every 6h" # If set then overwrite 'update_period'.
-  
-  quality = "low" # "high" or "low"
-  format = "video" # "audio", "video" or "custom"
-  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
-  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
-  max_height = 480 # Optional maximal height of video, example: 720, 1080
-
-
-  # optional: this will override the default link (usually the URL address) in the generated RSS feed with another link
-  ## link = "https://example.org"
-  # When format = "custom"
-  # YouTubeDL format parameter and result file extension
-  # custom_format = { youtube_dl_format = "bestaudio[ext=m4a]", extension = "m4a" }
-  
-#################################
-
   [feeds.Youtubey]
   url = "https://youtube.com/playlist?list=PL4-Gg2zOJwW-oc2ecb-hZF1BJ7358hYFf"
   private_feed = true
@@ -73,7 +37,7 @@ youtube = "<YOUTUBE_API_KEY>"
   
   quality = "high" # "high" or "low"
   format = "video" # "audio", "video" or "custom"
-  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  max_height = 1080 # Optional maximal height of video, example: 720, 1080
   youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
   playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
 
@@ -86,7 +50,43 @@ youtube = "<YOUTUBE_API_KEY>"
   
 ###############################
 
-  [feeds.awakening]
+  [feeds.Podcasts]
+  url = "https://youtube.com/playlist?list=PL4-Gg2zOJwW_Q28-l9eQB12mF81TGINrq"
+  private_feed = true
+  opml = true # (default value: false)
+
+  title = "Youtube Podcasts"
+  description = "Playlist of low visual requirment, long videos"
+  lang = "en"
+  # author = "Level1Tech"
+  # cover_art = "{IMAGE_URL}"
+  # cover_art_quality = "high"
+  # category = "TV"
+  # subcategories = ["Documentary", "Tech News"]
+  # explicit = true
+  
+  page_size = 100
+  clean = { keep_last = 100 }
+
+  update_period = "6h"
+  cron_schedule = "@every 6h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+
+
+  # optional: this will override the default link (usually the URL address) in the generated RSS feed with another link
+  ## link = "https://example.org"
+  # When format = "custom"
+  # YouTubeDL format parameter and result file extension
+  # custom_format = { youtube_dl_format = "bestaudio[ext=m4a]", extension = "m4a" }
+  
+#################################
+
+  [feeds.Awakening]
   url = "https://youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ"
   private_feed = true
   opml = true # (default value: false)
