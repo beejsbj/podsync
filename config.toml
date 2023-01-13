@@ -2,7 +2,7 @@
 [server]
 port = 8080
 hostname = "http://podsync.170.187.163.87.nip.io/"
-hostname = "https://my.test.host:4443"
+
 
 [storage]
   [storage.local]
