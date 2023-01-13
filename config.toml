@@ -123,7 +123,174 @@ youtube = "<YOUTUBE_API_KEY>"
   # custom_format = { youtube_dl_format = "bestaudio[ext=m4a]", extension = "m4a" }
   
 #################################
+
+  [feeds.OxfordPhil]
+  url = "https://www.youtube.com/playlist?list=PL2FEB728FF960FBD9"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
   
+  page_size = 55
+  clean = { keep_last = 55 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
+ 
+  [feeds.IntroPsych]
+  url = "https://www.youtube.com/playlist?list=PL6A08EB4EEFF3E91F"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
+  
+  page_size = 55
+  clean = { keep_last = 55 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
+
+  [feeds.DeathShelly]
+  url = "https://www.youtube.com/playlist?list=PLEA18FAF1AD9047B0"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
+  
+  page_size = 55
+  clean = { keep_last = 55 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
+
+  [feeds.SocialTheory]
+  url = "https://www.youtube.com/playlist?list=PLDF7B08FF8564D1FE"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
+  
+  page_size = 55
+  clean = { keep_last = 55 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
+
+  [feeds.PolPhil]
+  url = "https://www.youtube.com/playlist?list=PL8D95DEA9B7DFE825"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
+  
+  page_size = 55
+  clean = { keep_last = 55 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
+
+  [feeds.LitTheory]
+  url = "https://www.youtube.com/playlist?list=PLD00D35CBC75941BD"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
+  
+  page_size = 55
+  clean = { keep_last = 55 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
+
+  [feeds.CogSciVervake]
+  url = "https://youtube.com/playlist?list=PLND1JCRq8Vui6TIS24xcDk5dsxSaIeN7T"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
+  
+  page_size = 55
+  clean = { keep_last = 55 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 720 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
+
+  [feeds.AfterSocrates]
+  url = "https://www.youtube.com/playlist?list=PLND1JCRq8Vuj6q5NP_fXjBzUT1p_qYSCC"
+  private_feed = true
+  opml = true # (default value: false)
+
+  lang = "en"
+  
+  page_size = 100
+  clean = { keep_last = 100 }
+
+  update_period = "48h"
+  cron_schedule = "@every 48h" # If set then overwrite 'update_period'.
+  
+  quality = "high" # "high" or "low"
+  format = "video" # "audio", "video" or "custom"
+  max_height = 1080 # Optional maximal height of video, example: 720, 1080
+  youtube_dl_args = ["--embed-chapters"] # Embed YouTube timestamps as ID3 chapter metadata
+  playlist_sort = "asc" # or "desc", which will fetch playlist items from the end
+  
+#################################
 
 ####################################################################################
 
