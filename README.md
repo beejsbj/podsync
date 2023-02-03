@@ -1,1 +1,4 @@
-# he knows
+#  steps to set it up
+
+
+## WIP
