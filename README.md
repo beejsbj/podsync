@@ -3,5 +3,6 @@
 
 ## WIP
 
-caprover
-podsync
+caprover that runs podsync on server
+podsync configs POSTed when commits made here 
+
